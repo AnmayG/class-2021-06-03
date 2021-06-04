@@ -1,5 +1,5 @@
 ---
-title: "Work File"
+title: "whatever"
 author: "Anmay Gupta"
 date: "6/3/2021"
 output: html_document
@@ -10,9 +10,16 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
-## R Markdown
 
 ```{r}
 x <- read_csv("https://raw.githubusercontent.com/Financial-Times/police-misconduct-complaints-analysis/main/output/philly_clean.csv")
+view(x)
+```
+
+```{r}
+x %>% group_by(officer_id) %>% 
+  summarize(total = n()) %>% 
+  arrange(desc(total)) %>%
+  
 ```
 
